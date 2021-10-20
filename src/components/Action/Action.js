@@ -12,8 +12,11 @@ function Action({ text, actionOnClick, className, isDisabled }) {
   );
 }
 
-// Action.propTypes = {
-//   numbers: PropTypes.array.isRequired,
-// };
+Action.propTypes = {
+  text: PropTypes.string,
+  actionOnClick: PropTypes.func.isRequired,
+  className: PropTypes.string.isRequired,
+  isDisabled: PropTypes.bool.isRequired,
+};
 
 export default Action;
