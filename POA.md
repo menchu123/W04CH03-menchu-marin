@@ -15,12 +15,12 @@
 - Tiene un estado isCalling que se pasa al teclado, a Info y a Actions.
   - Cuando es true:
     - Deshabilita el teclado.
-    - Aparece el componente Info
+    - Añade la clase 'off' al componente Info
     - Renderiza el botón colgar y desaparece el de llamar
     - Inicia un timer de 5 segundos, y cuando se cumplen se pasa a false
   - Cuando es false:
     - Habilita el teclado.
-    - Desaparece el componente Info
+    - Elimina la clase 'off' del componente Info
     - Renderiza el botón llamar y desaparece el de colgar
 - Función colgar, que pasa a false el estado isCalling y resetea el display.
 
