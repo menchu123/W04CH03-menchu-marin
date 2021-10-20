@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function Key({ text, actionOnClick }) {
   return (
     <li>
@@ -7,5 +9,10 @@ function Key({ text, actionOnClick }) {
     </li>
   );
 }
+
+Key.propTypes = {
+  text: PropTypes.string,
+  actionOnClick: PropTypes.func.isRequired,
+};
 
 export default Key;

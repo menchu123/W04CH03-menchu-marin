@@ -7,7 +7,7 @@ function Info({ isCalling }) {
 }
 
 Info.propTypes = {
-  isCalling: PropTypes.bool,
+  isCalling: PropTypes.bool.isRequired,
 };
 
 export default Info;

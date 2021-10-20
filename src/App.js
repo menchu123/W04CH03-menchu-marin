@@ -1,9 +1,13 @@
 import "./App.css";
 import Info from "./components/Info/Info.js";
+import Key from "./components/Key/Key";
 
 function App() {
   return (
-    <Info isCalling={false} />
+    <>
+      <Info isCalling={false} />
+      <Key text="ok" actionOnClick={() => console.log("ji")} />
+    </>
     // <div className="container">
     //   {/* <!-- El siguiente elemento se oculta añadiéndole la clase "off" --> */}
     //   <span className="message">Calling...</span>
