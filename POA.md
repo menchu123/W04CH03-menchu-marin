@@ -30,7 +30,7 @@
 
 ### Display
 
-- Renderiza cada número que RECIBE.
+- Renderiza un array de números que RECIBE.
 
 ### Actions
 
