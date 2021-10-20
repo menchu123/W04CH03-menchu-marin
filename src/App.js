@@ -1,14 +1,14 @@
 import "./App.css";
 import Info from "./components/Info/Info.js";
-import Key from "./components/Key/Key";
 import Display from "./components/Display/Display";
 import Action from "./components/Action/Action";
+import Keyboard from "./components/Action/Keyboard/Keyboard";
 
 function App() {
   return (
     <>
       <Info isCalling={false} />
-      <Key text="ok" actionOnClick={() => console.log("ji")} />
+      {/* <Key text="ok" actionOnClick={() => console.log("ji")} isCalling={true} /> */}
       <Display numbers={[6, 4, 2, 7, 9]} />
       <div className="actions">
         <Action
@@ -18,6 +18,9 @@ function App() {
           className={"call"}
         />
       </div>
+      <ol className="keyboard">
+        <Keyboard isCalling={false} />
+      </ol>
     </>
     // <div className="container">
     //   {/* <!-- El siguiente elemento se oculta añadiéndole la clase "off" --> */}

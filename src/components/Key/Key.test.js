@@ -9,7 +9,7 @@ describe("Given an Key component", () => {
 
       const expectedText = "text";
 
-      render(<Key text={text} actionOnClick={() => {}} />);
+      render(<Key text={text} actionOnClick={() => {}} isCalling={true} />);
       const textElement = screen.getByText(expectedText);
 
       expect(textElement).toBeInTheDocument();
@@ -21,7 +21,9 @@ describe("Given an Key component", () => {
       const text = "Juan";
       const actionOnClick = jest.fn();
 
-      render(<Key text={text} actionOnClick={actionOnClick} />);
+      render(
+        <Key text={text} actionOnClick={actionOnClick} isCalling={false} />
+      );
       const textElement = screen.getByText(text);
       userEvent.click(textElement);
 
