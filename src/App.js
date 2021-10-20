@@ -14,7 +14,7 @@ function App() {
         <Action
           isDisabled={false}
           text={"llamar"}
-          onClick={() => console.log("hola")}
+          actionOnClick={() => console.log("hola")}
           className={"call"}
         />
       </div>
