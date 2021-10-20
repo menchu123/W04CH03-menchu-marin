@@ -17,4 +17,8 @@ function Keyboard({ isCalling }) {
   );
 }
 
+Keyboard.propTypes = {
+  isCalling: PropTypes.bool.isRequired,
+};
+
 export default Keyboard;
