@@ -2,7 +2,8 @@ import "./App.css";
 import Info from "./components/Info/Info.js";
 import Display from "./components/Display/Display";
 import Action from "./components/Action/Action";
-import Keyboard from "./components/Action/Keyboard/Keyboard";
+import Keyboard from "./components/Keyboard/Keyboard";
+import Actions from "./components/Actions/Actions";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <ol className="keyboard">
         <Keyboard isCalling={false} />
       </ol>
+      <Actions isDisabled={false} isCalling={false} />
     </>
     // <div className="container">
     //   {/* <!-- El siguiente elemento se oculta añadiéndole la clase "off" --> */}
