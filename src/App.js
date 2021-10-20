@@ -2,6 +2,7 @@ import "./App.css";
 import Info from "./components/Info/Info.js";
 import Key from "./components/Key/Key";
 import Display from "./components/Display/Display";
+import Action from "./components/Action/Action";
 
 function App() {
   return (
@@ -9,6 +10,14 @@ function App() {
       <Info isCalling={false} />
       <Key text="ok" actionOnClick={() => console.log("ji")} />
       <Display numbers={[6, 4, 2, 7, 9]} />
+      <div className="actions">
+        <Action
+          isDisabled={false}
+          text={"llamar"}
+          onClick={() => console.log("hola")}
+          className={"call"}
+        />
+      </div>
     </>
     // <div className="container">
     //   {/* <!-- El siguiente elemento se oculta añadiéndole la clase "off" --> */}
