@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Info isCalling={false} />
-      <Key text="ok" actionOnClick={() => console.log("ji")} />
+      <Key text="ok" actionOnClick={() => console.log("ji")} isCalling={true} />
       <Display numbers={[6, 4, 2, 7, 9]} />
       <div className="actions">
         <Action
