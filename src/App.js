@@ -1,6 +1,5 @@
 import "./App.css";
 import Info from "./components/Info/Info.js";
-import Key from "./components/Key/Key";
 import Display from "./components/Display/Display";
 import Action from "./components/Action/Action";
 import Keyboard from "./components/Action/Keyboard/Keyboard";
