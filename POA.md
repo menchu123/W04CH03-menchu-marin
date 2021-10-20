@@ -26,7 +26,7 @@
 
 ### Info
 
-- Renderiza un mensaje en base a una condición RECIBIDA.
+- Renderiza un mensaje.
 
 ### Display
 
