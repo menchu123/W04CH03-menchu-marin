@@ -1,12 +1,14 @@
 import "./App.css";
 import Info from "./components/Info/Info.js";
 import Key from "./components/Key/Key";
+import Display from "./components/Display/Display";
 
 function App() {
   return (
     <>
       <Info isCalling={false} />
       <Key text="ok" actionOnClick={() => console.log("ji")} />
+      <Display numbers={[6, 4, 2, 7, 9]} />
     </>
     // <div className="container">
     //   {/* <!-- El siguiente elemento se oculta añadiéndole la clase "off" --> */}
