@@ -13,10 +13,15 @@ function App() {
     setDisplayArray([...displayArray, event.target.textContent]);
   };
 
+  const deleteNumber = () => {
+    setDisplayArray(displayArray.splice(0, displayArray.length - 1));
+  };
+
   return (
     <Context.Provider
       value={{
         getNumber,
+        deleteNumber,
       }}
     >
       {/* <Key text="ok" actionOnClick={() => console.log("ji")} isCalling={true} /> */}

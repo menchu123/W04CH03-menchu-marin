@@ -3,12 +3,12 @@ import { useContext } from "react";
 import Context from "../Context/Context";
 
 function Key({ text, isCalling }) {
-  const { getNumber } = useContext(Context);
+  const { getNumber, deleteNumber } = useContext(Context);
   return (
     <li>
       <button
         className={`key${text === "delete" ? " big" : ""}`}
-        onClick={(event) => getNumber(event)}
+        onClick={text === "delete" ? deleteNumber : (event) => getNumber(event)}
         disabled={isCalling}
       >
         {text}
