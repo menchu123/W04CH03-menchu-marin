@@ -19,7 +19,6 @@ function Key({ text }) {
 
 Key.propTypes = {
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  isCalling: PropTypes.bool.isRequired,
 };
 
 export default Key;
