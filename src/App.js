@@ -26,11 +26,16 @@ function App() {
   const call = (event) => {
     event.preventDefault();
     setIsCalling(true);
+    setTimeout(() => {
+      setIsCalling(false);
+      setDisplayArray([]);
+    }, 5000);
   };
 
   const hang = (event) => {
     event.preventDefault();
     setIsCalling(false);
+    setDisplayArray([]);
   };
 
   return (
