@@ -23,16 +23,18 @@ function App() {
     setDisplayArray(displayArray.splice(0, displayArray.length - 1));
   };
 
+  let timer;
   const call = (event) => {
     event.preventDefault();
     setIsCalling(true);
-    setTimeout(() => {
+    timer = setTimeout(() => {
       setIsCalling(false);
       setDisplayArray([]);
     }, 5000);
   };
 
   const hang = (event) => {
+    clearTimeout(timer);
     event.preventDefault();
     setIsCalling(false);
     setDisplayArray([]);
@@ -45,6 +47,7 @@ function App() {
         deleteNumber,
         call,
         hang,
+        isCalling,
       }}
     >
       {/* <Key text="ok" actionOnClick={() => console.log("ji")} isCalling={true} /> */}

@@ -18,10 +18,12 @@
     - Añade la clase 'off' al componente Info
     - Renderiza el botón colgar y desaparece el de llamar
     - Inicia un timer de 5 segundos, y cuando se cumplen se pasa a false
+      (estos puntos son para mi, a App le dan igual)
   - Cuando es false:
     - Habilita el teclado.
     - Elimina la clase 'off' del componente Info
     - Renderiza el botón llamar y desaparece el de colgar
+      (estos puntos son para mi, a App le dan igual)
 - Función colgar, que pasa a false el estado isCalling y resetea el display.
 
 ### Info
@@ -39,9 +41,10 @@
 ### Action
 
 - Renderiza un texto RECIBIDO.
-- RECIBE una función.
+- Según el texto que reciba, llamará a una función u otra onClick
+- RECIBE dos funciones.
 - RECIBE una clase.
-- RECIBE un prop true o false según el cual añadirá la clase 'active'
+- RECIBE un prop true o false según el cual añadirá la clase 'active'.
 
 ### Keyboard
 
@@ -51,3 +54,4 @@
 
 - Renderiza un texto RECIBIDO.
 - Ejecuta una función onClick que RECIBE.
+- Tiene una clase que se añade según el contenido del text (si es 'delete', se añade la clase 'big')
