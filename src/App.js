@@ -8,10 +8,14 @@ import Context from "./components/Context/Context";
 
 function App() {
   const [displayArray, setDisplayArray] = useState([]);
+  const [isDisabled, setIsDisabled] = useState(true);
+  const [isCalling, setIsCalling] = useState(false);
 
   const getNumber = (event) => {
     if (displayArray.length < 9) {
       setDisplayArray([...displayArray, event.target.textContent]);
+    } else {
+      setIsDisabled(false);
     }
   };
 
@@ -19,21 +23,38 @@ function App() {
     setDisplayArray(displayArray.splice(0, displayArray.length - 1));
   };
 
+  const call = (event) => {
+    event.preventDefault();
+    setIsCalling(true);
+    setTimeout(() => {
+      setIsCalling(false);
+      setDisplayArray([]);
+    }, 5000);
+  };
+
+  const hang = (event) => {
+    event.preventDefault();
+    setIsCalling(false);
+    setDisplayArray([]);
+  };
+
   return (
     <Context.Provider
       value={{
         getNumber,
         deleteNumber,
+        call,
+        hang,
       }}
     >
       {/* <Key text="ok" actionOnClick={() => console.log("ji")} isCalling={true} /> */}
       <div className="container">
         {/* <!-- El siguiente elemento se oculta añadiéndole la clase "off" --> */}
-        <Info isCalling={false} />
+        <Info isCalling={isCalling} />
         <main className="phone">
           <div className="keyboard-container">
             <ol className="keyboard">
-              <Keyboard isCalling={false} />
+              <Keyboard isCalling={isCalling} />
             </ol>
           </div>
           <div className="actions">
@@ -42,7 +63,7 @@ function App() {
             {/* <!-- el número de teléfono tiene 9 cifras --> */}
 
             {/* <!-- Sólo se tiene que ver un botón u otro --> */}
-            <Actions isDisabled={false} isCalling={false} />
+            <Actions isDisabled={isDisabled} isCalling={isCalling} />
           </div>
         </main>
       </div>
