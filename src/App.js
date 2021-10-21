@@ -3,13 +3,14 @@ import Info from "./components/Info/Info.js";
 import Display from "./components/Display/Display";
 import Keyboard from "./components/Keyboard/Keyboard";
 import Actions from "./components/Actions/Actions";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Context from "./components/Context/Context";
 
 function App() {
   const [displayArray, setDisplayArray] = useState([]);
   const [isDisabled, setIsDisabled] = useState(true);
   const [isCalling, setIsCalling] = useState(false);
+  const timer = useRef(null);
 
   const getNumber = (event) => {
     if (displayArray.length < 9) {
@@ -23,18 +24,17 @@ function App() {
     setDisplayArray(displayArray.splice(0, displayArray.length - 1));
   };
 
-  let timer;
   const call = (event) => {
     event.preventDefault();
     setIsCalling(true);
-    timer = setTimeout(() => {
+    timer.current = setTimeout(() => {
       setIsCalling(false);
       setDisplayArray([]);
     }, 5000);
   };
 
   const hang = (event) => {
-    clearTimeout(timer);
+    clearTimeout(timer.current);
     event.preventDefault();
     setIsCalling(false);
     setDisplayArray([]);
