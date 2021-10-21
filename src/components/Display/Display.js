@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./Display.css";
 
 function Display({ numbers }) {
   return <span className="number">{numbers.join("")}</span>;

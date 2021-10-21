@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useContext } from "react";
 import Context from "../Context/Context";
+import "./Key.css";
 
 function Key({ text }) {
   const { getNumber, deleteNumber, isCalling } = useContext(Context);

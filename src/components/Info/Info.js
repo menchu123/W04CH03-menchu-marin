@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./Info.css";
 
 function Info({ isCalling }) {
   return (

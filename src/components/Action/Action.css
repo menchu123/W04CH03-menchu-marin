@@ -1,0 +1,18 @@
+.actions a {
+  border-radius: 10px;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+  opacity: 0.5;
+  transform: scale(0.9);
+  transition: all 0.2s ease-out;
+}
+
+.actions .active {
+  cursor: pointer;
+  opacity: 1;
+}
+.actions a.active:hover {
+  transform: scale(1);
+}
