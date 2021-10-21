@@ -4,12 +4,21 @@ import Display from "./components/Display/Display";
 import Keyboard from "./components/Keyboard/Keyboard";
 import Actions from "./components/Actions/Actions";
 import { useState } from "react";
+import Context from "./components/Context/Context";
 
 function App() {
   const [displayArray, setDisplayArray] = useState([]);
 
+  const getNumber = (event) => {
+    setDisplayArray([...displayArray, event.target.textContent]);
+  };
+
   return (
-    <>
+    <Context.Provider
+      value={{
+        getNumber,
+      }}
+    >
       {/* <Key text="ok" actionOnClick={() => console.log("ji")} isCalling={true} /> */}
       <div className="container">
         {/* <!-- El siguiente elemento se oculta añadiéndole la clase "off" --> */}
@@ -30,7 +39,7 @@ function App() {
           </div>
         </main>
       </div>
-    </>
+    </Context.Provider>
   );
 }
 

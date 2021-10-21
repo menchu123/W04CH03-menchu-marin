@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 function Action({ text, actionOnClick, className, isDisabled }) {
   return (
     <a
-      href="#"
+      href="action"
       onClick={actionOnClick}
       className={className + (isDisabled ? "" : " active")}
     >
