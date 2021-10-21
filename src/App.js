@@ -9,6 +9,7 @@ import Context from "./components/Context/Context";
 function App() {
   const [displayArray, setDisplayArray] = useState([]);
   const [isDisabled, setIsDisabled] = useState(true);
+  const [isCalling, setIsCalling] = useState(false);
 
   const getNumber = (event) => {
     if (displayArray.length < 9) {
@@ -22,11 +23,23 @@ function App() {
     setDisplayArray(displayArray.splice(0, displayArray.length - 1));
   };
 
+  const call = (event) => {
+    event.preventDefault();
+    setIsCalling(true);
+  };
+
+  const hang = (event) => {
+    event.preventDefault();
+    setIsCalling(false);
+  };
+
   return (
     <Context.Provider
       value={{
         getNumber,
         deleteNumber,
+        call,
+        hang,
       }}
     >
       {/* <Key text="ok" actionOnClick={() => console.log("ji")} isCalling={true} /> */}
@@ -45,7 +58,7 @@ function App() {
             {/* <!-- el número de teléfono tiene 9 cifras --> */}
 
             {/* <!-- Sólo se tiene que ver un botón u otro --> */}
-            <Actions isDisabled={isDisabled} isCalling={false} />
+            <Actions isDisabled={isDisabled} isCalling={isCalling} />
           </div>
         </main>
       </div>

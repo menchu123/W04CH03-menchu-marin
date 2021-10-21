@@ -5,19 +5,9 @@ function Actions({ isCalling, isDisabled }) {
   return (
     <>
       {isCalling ? (
-        <Action
-          text="Hang"
-          actionOnClick={() => {}}
-          className="hang"
-          isDisabled={isDisabled}
-        />
+        <Action text="Hang" className="hang" isDisabled={isDisabled} />
       ) : (
-        <Action
-          text="Call"
-          actionOnClick={() => {}}
-          className="call"
-          isDisabled={isDisabled}
-        />
+        <Action text="Call" className="call" isDisabled={isDisabled} />
       )}
     </>
   );

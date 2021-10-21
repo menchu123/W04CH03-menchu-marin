@@ -1,10 +1,15 @@
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import Context from "../Context/Context";
 
-function Action({ text, actionOnClick, className, isDisabled }) {
+function Action({ text, className, isDisabled }) {
+  const { call, hang } = useContext(Context);
   return (
     <a
       href="action"
-      onClick={actionOnClick}
+      onClick={
+        text === "Call" ? (event) => call(event) : (event) => hang(event)
+      }
       className={className + (isDisabled ? "" : " active")}
     >
       {text}
@@ -14,7 +19,6 @@ function Action({ text, actionOnClick, className, isDisabled }) {
 
 Action.propTypes = {
   text: PropTypes.string,
-  actionOnClick: PropTypes.func.isRequired,
   className: PropTypes.string.isRequired,
   isDisabled: PropTypes.bool.isRequired,
 };
