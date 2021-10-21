@@ -1,0 +1,5 @@
+.keyboard {
+  width: 213px;
+  display: flex;
+  flex-wrap: wrap;
+}
