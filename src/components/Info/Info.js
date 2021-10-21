@@ -2,7 +2,9 @@ import PropTypes from "prop-types";
 
 function Info({ isCalling }) {
   return (
-    <span className={`message${isCalling ? "" : " off"}`}>Calling...</span>
+    <span data-testid="info" className={`message${isCalling ? "" : " off"}`}>
+      Calling...
+    </span>
   );
 }
 

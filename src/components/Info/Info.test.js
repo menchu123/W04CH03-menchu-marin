@@ -2,15 +2,17 @@ import { render, screen } from "@testing-library/react";
 import Info from "./Info";
 
 describe("Given an Info component", () => {
-  describe("When it recieves a true", () => {
-    test("Then it should display itself", () => {
-      const isCalling = true;
-      const expectedText = "Calling...";
+  describe("When it receives a false", () => {
+    test("Then it should have 'message off' className", () => {
+      const state = false;
 
-      render(<Info isCalling={isCalling} />);
-      const textElement = screen.getByText(expectedText);
+      const expectedClassName = "message off";
 
-      expect(textElement).toBeInTheDocument();
+      render(<Info state={state} />);
+
+      const infoElement = screen.getByTestId("info");
+
+      expect(infoElement).toHaveClass(expectedClassName);
     });
   });
 });
