@@ -30,6 +30,7 @@ function App() {
       timer.current = setTimeout(() => {
         setIsCalling(false);
         setDisplayArray([]);
+        setIsDisabled(true);
       }, 5000);
     }
   };
@@ -38,6 +39,7 @@ function App() {
     clearTimeout(timer.current);
     setIsCalling(false);
     setDisplayArray([]);
+    setIsDisabled(true);
   };
 
   return (
