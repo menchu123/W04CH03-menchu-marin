@@ -3,8 +3,11 @@ import Info from "./components/Info/Info.js";
 import Display from "./components/Display/Display";
 import Keyboard from "./components/Keyboard/Keyboard";
 import Actions from "./components/Actions/Actions";
+import { useState } from "react";
 
 function App() {
+  const [displayArray, setDisplayArray] = useState([]);
+
   return (
     <>
       {/* <Key text="ok" actionOnClick={() => console.log("ji")} isCalling={true} /> */}
@@ -18,7 +21,7 @@ function App() {
             </ol>
           </div>
           <div className="actions">
-            <Display numbers={[6, 4, 2, 7, 9]} />
+            <Display numbers={displayArray} />
             {/* <!-- El botón de llamar debe tener la clase "activo" cuando --> */}
             {/* <!-- el número de teléfono tiene 9 cifras --> */}
 
