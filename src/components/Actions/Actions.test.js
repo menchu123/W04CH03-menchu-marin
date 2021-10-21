@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import Actions from "./Actions";
-import { useContext } from "react";
 import Context from "../Context/Context";
 
 describe("Given an Action component", () => {
