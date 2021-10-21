@@ -8,10 +8,13 @@ import Context from "./components/Context/Context";
 
 function App() {
   const [displayArray, setDisplayArray] = useState([]);
+  const [isDisabled, setIsDisabled] = useState(true);
 
   const getNumber = (event) => {
     if (displayArray.length < 9) {
       setDisplayArray([...displayArray, event.target.textContent]);
+    } else {
+      setIsDisabled(false);
     }
   };
 
@@ -42,7 +45,7 @@ function App() {
             {/* <!-- el número de teléfono tiene 9 cifras --> */}
 
             {/* <!-- Sólo se tiene que ver un botón u otro --> */}
-            <Actions isDisabled={false} isCalling={false} />
+            <Actions isDisabled={isDisabled} isCalling={false} />
           </div>
         </main>
       </div>
