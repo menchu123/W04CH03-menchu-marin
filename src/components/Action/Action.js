@@ -4,11 +4,24 @@ import Context from "../Context/Context";
 
 function Action({ text, className, isDisabled }) {
   const { call, hang } = useContext(Context);
+
+  const callFunction = (event) => {
+    event.preventDefault();
+    call();
+  };
+
+  const hangFunction = (event) => {
+    event.preventDefault();
+    hang();
+  };
+
   return (
     <a
       href="action"
       onClick={
-        text === "Call" ? (event) => call(event) : (event) => hang(event)
+        text === "Call"
+          ? (event) => callFunction(event)
+          : (event) => hangFunction(event)
       }
       className={className + (isDisabled ? "" : " active")}
     >
