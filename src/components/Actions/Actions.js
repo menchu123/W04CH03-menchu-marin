@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import Action from "../Action/Action";
+import "./Actions.css";
 
 function Actions({ isCalling, isDisabled }) {
   return (
