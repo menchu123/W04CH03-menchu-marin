@@ -6,12 +6,7 @@ function Keyboard({ isCalling }) {
   return (
     <>
       {keyArray.map((key) => (
-        <Key
-          key={key}
-          text={key}
-          actionOnClick={() => console.log(key)}
-          isCalling={isCalling}
-        />
+        <Key key={key} text={key} isCalling={isCalling} />
       ))}
     </>
   );

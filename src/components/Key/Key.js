@@ -1,11 +1,14 @@
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import Context from "../Context/Context";
 
-function Key({ text, actionOnClick, isCalling }) {
+function Key({ text, isCalling }) {
+  const { getNumber, deleteNumber } = useContext(Context);
   return (
     <li>
       <button
         className={`key${text === "delete" ? " big" : ""}`}
-        onClick={actionOnClick}
+        onClick={text === "delete" ? deleteNumber : (event) => getNumber(event)}
         disabled={isCalling}
       >
         {text}
@@ -16,7 +19,6 @@ function Key({ text, actionOnClick, isCalling }) {
 
 Key.propTypes = {
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  actionOnClick: PropTypes.func.isRequired,
   isCalling: PropTypes.bool.isRequired,
 };
 

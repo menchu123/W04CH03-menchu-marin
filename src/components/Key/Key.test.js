@@ -9,25 +9,10 @@ describe("Given an Key component", () => {
 
       const expectedText = "text";
 
-      render(<Key text={text} actionOnClick={() => {}} isCalling={true} />);
+      render(<Key text={text} isCalling={true} />);
       const textElement = screen.getByText(expectedText);
 
       expect(textElement).toBeInTheDocument();
-    });
-  });
-
-  describe("When it recieves a function", () => {
-    test("Then it should execute the function if it is clicked", () => {
-      const text = "Juan";
-      const actionOnClick = jest.fn();
-
-      render(
-        <Key text={text} actionOnClick={actionOnClick} isCalling={false} />
-      );
-      const textElement = screen.getByText(text);
-      userEvent.click(textElement);
-
-      expect(actionOnClick).toHaveBeenCalled();
     });
   });
 });
