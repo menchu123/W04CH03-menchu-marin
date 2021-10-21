@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useContext } from "react";
 import Context from "../Context/Context";
+import "./Action.css";
 
 function Action({ text, className, isDisabled }) {
   const { call, hang } = useContext(Context);
