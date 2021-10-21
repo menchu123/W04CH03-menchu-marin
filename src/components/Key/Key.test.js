@@ -13,7 +13,7 @@ describe("Given an Key component", () => {
 
       render(
         <Context.Provider value={{ getNumber, deleteNumber }}>
-          <Key text={text} isCalling={true} />
+          <Key text={text} isCalling={isCalling} />
         </Context.Provider>
       );
       const textElement = screen.getByText(text);
@@ -68,7 +68,7 @@ describe("Given an Key component", () => {
       const isCalling = true;
 
       render(
-        <Context.Provider value={{ getNumber, deleteNumber }}>
+        <Context.Provider value={{ getNumber, deleteNumber, isCalling }}>
           <Key text={text} isCalling={isCalling} />
         </Context.Provider>
       );

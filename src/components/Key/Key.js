@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 import { useContext } from "react";
 import Context from "../Context/Context";
 
-function Key({ text, isCalling }) {
-  const { getNumber, deleteNumber } = useContext(Context);
+function Key({ text }) {
+  const { getNumber, deleteNumber, isCalling } = useContext(Context);
   return (
     <li>
       <button

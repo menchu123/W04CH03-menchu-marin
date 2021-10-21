@@ -47,6 +47,7 @@ function App() {
         deleteNumber,
         call,
         hang,
+        isCalling,
       }}
     >
       {/* <Key text="ok" actionOnClick={() => console.log("ji")} isCalling={true} /> */}
