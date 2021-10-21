@@ -10,7 +10,9 @@ function App() {
   const [displayArray, setDisplayArray] = useState([]);
 
   const getNumber = (event) => {
-    setDisplayArray([...displayArray, event.target.textContent]);
+    if (displayArray.length < 9) {
+      setDisplayArray([...displayArray, event.target.textContent]);
+    }
   };
 
   const deleteNumber = () => {
