@@ -78,5 +78,3 @@ describe("Given an Key component", () => {
     });
   });
 });
-
-export default Key;
