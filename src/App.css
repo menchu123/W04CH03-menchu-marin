@@ -76,16 +76,6 @@ li {
   align-items: center;
 }
 
-.number {
-  background-color: #fff;
-  color: #454545;
-  padding: 5px 20px;
-  width: 150px;
-  border-radius: 30px;
-  text-align: center;
-  margin: 50px 0;
-  height: 31px;
-}
 .off {
   visibility: hidden !important;
 }
