@@ -7,14 +7,14 @@ function Actions({ isCalling, isDisabled }) {
       {isCalling ? (
         <Action
           text="Hang"
-          actionOnClick={() => console.log("Hang")}
+          actionOnClick={() => {}}
           className="hang"
           isDisabled={isDisabled}
         />
       ) : (
         <Action
           text="Call"
-          actionOnClick={() => console.log("Call")}
+          actionOnClick={() => {}}
           className="call"
           isDisabled={isDisabled}
         />
