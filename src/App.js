@@ -45,11 +45,11 @@ function App() {
       {/* <Key text="ok" actionOnClick={() => console.log("ji")} isCalling={true} /> */}
       <div className="container">
         {/* <!-- El siguiente elemento se oculta añadiéndole la clase "off" --> */}
-        <Info isCalling={false} />
+        <Info isCalling={isCalling} />
         <main className="phone">
           <div className="keyboard-container">
             <ol className="keyboard">
-              <Keyboard isCalling={false} />
+              <Keyboard isCalling={isCalling} />
             </ol>
           </div>
           <div className="actions">
