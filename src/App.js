@@ -24,20 +24,24 @@ function App() {
     setDisplayArray(displayArray.splice(0, displayArray.length - 1));
   };
 
-  const call = (event) => {
-    event.preventDefault();
-    setIsCalling(true);
-    timer.current = setTimeout(() => {
-      setIsCalling(false);
-      setDisplayArray([]);
-    }, 5000);
-  };
-
-  const hang = (event) => {
-    clearTimeout(timer.current);
-    event.preventDefault();
+  const reset = () => {
     setIsCalling(false);
     setDisplayArray([]);
+    setIsDisabled(true);
+  };
+
+  const call = () => {
+    if (displayArray.length === 9) {
+      setIsCalling(true);
+      timer.current = setTimeout(() => {
+        reset();
+      }, 5000);
+    }
+  };
+
+  const hang = () => {
+    clearTimeout(timer.current);
+    reset();
   };
 
   return (
