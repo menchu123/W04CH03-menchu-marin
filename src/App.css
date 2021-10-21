@@ -63,9 +63,7 @@ li {
 .key:not(disabled):hover {
   background-color: #454545;
 }
-.message {
-  line-height: 50px;
-}
+
 .phone {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -74,8 +72,4 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.off {
-  visibility: hidden !important;
 }
